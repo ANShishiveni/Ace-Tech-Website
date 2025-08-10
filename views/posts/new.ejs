@@ -1,0 +1,22 @@
+<%- include('../partials/header', { title }) %>
+<form method="post" action="/posts" class="space-y-4 max-w-2xl bg-white border rounded-xl p-6">
+  <div>
+    <label class="block text-sm font-medium">Title</label>
+    <input name="title" value="<%= form.title %>" class="mt-1 w-full border rounded px-3 py-2" />
+    <% if (errors.title) { %>
+      <p class="text-sm text-red-600 mt-1"><%= errors.title %></p>
+    <% } %>
+  </div>
+  <div>
+    <label class="block text-sm font-medium">Content</label>
+    <textarea name="content" rows="10" class="mt-1 w-full border rounded px-3 py-2"><%= form.content %></textarea>
+    <% if (errors.content) { %>
+      <p class="text-sm text-red-600 mt-1"><%= errors.content %></p>
+    <% } %>
+  </div>
+  <div class="flex gap-2">
+    <a href="/posts" class="px-3 py-2 border rounded">Cancel</a>
+    <button class="px-4 py-2 bg-blue-600 text-white rounded">Create</button>
+  </div>
+</form>
+<%- include('../partials/footer') %>

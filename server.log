@@ -1,0 +1,4 @@
+nohup: ignoring input
+Server listening on http://localhost:3000
+[0mGET / [32m200[0m 7.456 ms - 2020[0m
+[0mGET /posts [32m200[0m 1.762 ms - 1450[0m

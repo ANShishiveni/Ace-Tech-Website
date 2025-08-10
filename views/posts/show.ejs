@@ -1,0 +1,14 @@
+<%- include('../partials/header', { title }) %>
+<article class="prose max-w-none">
+  <h1><%= post.title %></h1>
+  <p class="text-sm text-slate-500"><%= new Date(post.created_at).toLocaleString() %></p>
+  <div class="mt-4 whitespace-pre-wrap"><%= post.content %></div>
+  <% if (post.updated_at) { %>
+    <p class="text-xs text-slate-400 mt-6">Updated: <%= new Date(post.updated_at).toLocaleString() %></p>
+  <% } %>
+</article>
+<div class="mt-6 flex gap-2">
+  <a class="px-3 py-2 border rounded" href="/posts">Back</a>
+  <a class="px-3 py-2 bg-blue-600 text-white rounded" href="/posts/<%= post.id %>/edit">Edit</a>
+</div>
+<%- include('../partials/footer') %>
