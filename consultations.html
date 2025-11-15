@@ -33,11 +33,11 @@
         <div class="form-container">
             <form id="bookingForm" onsubmit="return validateForm()" method="POST">
                 <label for="name">Full name</label>
-                <input type="text" id="name" name="name" required>
-        
+                <input type="text" id="name" name="name" placeholder="e.g. John Doe" autocomplete="name" required>
+
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-        
+                <input type="email" id="email" name="email" placeholder="e.g. john@example.com" autocomplete="email" required>
+
                 <label for="service">Select service</label>
                 <select id="service" name="service" required>
                     <option value="">--Please select a service--</option>
@@ -46,21 +46,21 @@
                     <option value="Windows Troubleshooting">Windows Troubleshooting</option>
                     <option value="Network Solutions">Network Solutions</option>
                 </select>
-        
+                
                 <label for="location">Preferred Location</label>
-                <input type="text" id="location" name="location" required>
-        
+                <input type="text" id="location" name="location" placeholder="e.g. Windhoek West" autocomplete="address-level2" required>
+
                 <label for="date">Preferred Date</label>
                 <input type="date" id="date" name="date" required>
-        
+
                 <label for="info">Message</label>
-                <textarea id="info" name="info" rows="4" cols="50" required></textarea>
-        
+                <textarea id="info" name="info" rows="4" cols="50" placeholder="Describe your issue or request" required></textarea>
+
                 <button type="submit">Book Now</button>
             </form>
-        
-            <p id="errorMessage" style="color:white; text-align:center;"></p>
-        </div>        
+            
+            <p id="errorMessage" aria-live="polite"></p>
+        </div>
         
     </section>
 </main>

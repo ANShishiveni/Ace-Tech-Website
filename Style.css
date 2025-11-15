@@ -598,12 +598,13 @@ section {
 /*Booking form*/
 /* Form container with background and box-shadow */
 .form-container {
-    background-color: #C51165;
-    padding: 30px;
-    border-radius: 10px;
-    max-width: 600px;
-    margin: 50px auto; /* Center the form on the page */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a soft shadow effect */
+    background-color: #fff;
+    padding: 32px;
+    border-radius: 12px;
+    max-width: 640px;
+    margin: 40px auto;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border: 1px solid #E8EAF6;
 }
 
 /* Style for the form elements */
@@ -614,25 +615,32 @@ form {
 }
 
 form label {
-    font-size: 16px;
-    background-color: var(--button-bg-color);
-    color: white;
-    border-radius: 10px;
-    padding: 10px 20px;
-    margin: 20px auto 0;
-    max-width: 350px;
-    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-top: 12px;
+    margin-bottom: 6px;
 }
 
 form input,
 form select,
 form textarea,
 form button {
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    padding: 12px;
+    margin-top: 0;
+    border-radius: 8px;
+    border: 1px solid #d0d7de;
     font-size: 1rem;
+    background-color: #fff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    outline: none;
+    border-color: var(--button-hover-bg-color);
+    box-shadow: 0 0 0 3px rgba(92, 107, 192, 0.2);
 }
 
 /* Button Styling */
@@ -640,10 +648,11 @@ button {
     background-color: var(--button-bg-color);
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    padding: 10px;
+    padding: 12px 16px;
     margin-top: 20px;
+    font-weight: 600;
 }
 
 button:hover {
@@ -652,9 +661,17 @@ button:hover {
 
 /* Style for error messages */
 #errorMessage {
-    color: red;
+    color: var(--text-color);
     text-align: center;
     margin-top: 15px;
+}
+
+#errorMessage.error {
+    color: #d32f2f;
+}
+
+#errorMessage.success {
+    color: #2e7d32;
 }
 
 /* Additional styling for inputs */

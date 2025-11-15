@@ -178,6 +178,8 @@ function validateForm() {
 
     // Display errors if any
     if (errors.length > 0) {
+        errorMessage.classList.remove('success');
+        errorMessage.classList.add('error');
         errorMessage.innerHTML = errors.join('<br>');
         return false;
     }
@@ -205,10 +207,13 @@ function submitForm() {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            alert(data.message);
             form.reset();
-            errorMessage.innerHTML = '';
+            errorMessage.classList.remove('error');
+            errorMessage.classList.add('success');
+            errorMessage.innerHTML = data.message;
         } else {
+            errorMessage.classList.remove('success');
+            errorMessage.classList.add('error');
             errorMessage.innerHTML = data.message;
         }
     })
@@ -222,3 +227,14 @@ function submitForm() {
         submitButton.disabled = false;
     });
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const dateInput = document.getElementById('date');
+    if (dateInput) {
+        const today = new Date();
+        const yyyy = today.getFullYear();
+        const mm = String(today.getMonth() + 1).padStart(2, '0');
+        const dd = String(today.getDate()).padStart(2, '0');
+        dateInput.min = `${yyyy}-${mm}-${dd}`;
+    }
+});
