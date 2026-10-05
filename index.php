@@ -101,7 +101,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $conn->close();
 
     } catch (Exception $e) {
-        $response['message'] = "Error: " . $e->getMessage();
+        error_log($e->getMessage());
+        $response['message'] = "Unable to process the booking request.";
     }
 
     header('Content-Type: application/json');

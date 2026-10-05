@@ -39,15 +39,6 @@ CREATE TABLE `bookings` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `bookings`
---
-
-INSERT INTO `bookings` (`id`, `NAME`, `email`, `service`, `location`, `preferred_date`, `message`, `created_at`) VALUES
-(1, 'Wallace Craig', 'ndinomwene67@outlook.com', 'Development', 'unam', '2024-10-21', 'We have slow computers. We would like you to come and take a look', '2024-10-22 04:24:12'),
-(2, 'Absalom Shishiveni', 'absa@unam.na', 'Development', 'unam', '2024-10-22', 'We have a network outage.', '2024-10-22 04:50:11'),
-(3, 'John Doe', 'johndoe@example.com', 'Development', 'Ombili', '2024-10-25', 'I need help with my home network configuration.', '2024-10-22 05:18:20');
-
---
 -- Indexes for dumped tables
 --
 
